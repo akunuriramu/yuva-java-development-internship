@@ -119,12 +119,9 @@ public class StudentGradeManagerApp {
             // Topic 2: Ternary Operator for Pass/Fail status
             String academicStatus = (average >= PASS_MARK_THRESHOLD) ? "PASSED" : "FAILED";
 
-            // Topic 2 & 3: Logical Operators & Nested if for Scholarship Eligibility
-            boolean attendanceEligible = (studentAttendance[i] >= 85);
-            boolean scoreEligible = (average >= 85.0);
-            boolean disciplineClean = !hasDisciplinaryWarning[i];
-
-            boolean isScholarshipAwarded = (attendanceEligible && scoreEligible) && disciplineClean;
+            // Topic 2 & 3: Composite short-circuit boolean logic for Scholarship Eligibility
+            // Explicit rule: ((attendance >= 85 && average >= 85.0) && !disciplinaryWarning)
+            boolean isScholarshipAwarded = ((studentAttendance[i] >= 85 && average >= 85.0) && !hasDisciplinaryWarning[i]);
             String scholarshipStatus = isScholarshipAwarded ? "ELIGIBLE (50%)" : "NOT ELIGIBLE";
 
             System.out.printf("%-4d %-15s %-10d %-8.2f %-6c %-12s %-15s%n",

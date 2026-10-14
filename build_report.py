@@ -914,12 +914,91 @@ Final Account Balance: Rs. 9,500.00
         "6. Exception Handling: Features a custom InvalidMarkException and try-catch-finally block that audits all input scores before calculations proceed."
     )
 
-    add_custom_heading("9.1 Code Implementation (StudentGradeManagerApp.java)", level=2)
+    add_custom_heading("9.1 Architectural Design & Step-by-Step Code Walkthrough", level=2)
+    
+    doc.add_paragraph(
+        "The architecture of StudentGradeManagerApp.java was engineered to serve as a comprehensive capstone demonstrating "
+        "enterprise software engineering patterns within a single executable program. Below is a detailed walkthrough of each architectural component:"
+    )
+
+    p_walk1 = doc.add_paragraph()
+    r = p_walk1.add_run("1. Multidimensional Matrix & Parallel Arrays Layout:\n")
+    r.bold = True
+    r.font.color.rgb = COLOR_PRIMARY_NAVY
+    p_walk1.add_run(
+        "In Java, multi-dimensional arrays are implemented as arrays-of-arrays stored in Heap memory. The 2D matrix rawMarks[4][4] "
+        "consists of an outer array of 4 reference pointers, each pointing to an independent 4-element integer array storing scores "
+        "across four curriculum modules (Java Core, Algorithms, Database SQL, Web Basics). Parallel 1D arrays (studentNames, studentAttendance, "
+        "hasDisciplinaryWarning) are structurally synchronized by shared index i (0 to 3), enabling O(1) relational access across student dimensions."
+    )
+
+    p_walk2 = doc.add_paragraph()
+    r = p_walk2.add_run("2. Data Integrity Architecture & validateAllMarks() Method:\n")
+    r.bold = True
+    r.font.color.rgb = COLOR_PRIMARY_NAVY
+    p_walk2.add_run(
+        "Enterprise applications must prevent corrupted or fraudulent data from propagating into business calculations. A checked exception "
+        "InvalidMarkException is defined with an internal field invalidMark and a getter getInvalidMark(). The static helper method "
+        "validateAllMarks(int[][] matrix) traverses every row and column. If any score violates the invariant [0 <= mark <= 100], "
+        "it immediately instantiates and throws InvalidMarkException. The main method encloses this validation within a try-catch-finally "
+        "block, halting execution on error while guaranteeing audit trail completion in the finally block."
+    )
+
+    p_walk3 = doc.add_paragraph()
+    r = p_walk3.add_run("3. High-Precision Calculations & Widening Type Casting:\n")
+    r.bold = True
+    r.font.color.rgb = COLOR_PRIMARY_NAVY
+    p_walk3.add_run(
+        "When dividing integers in Java, the '/' operator performs integer truncation, discarding remainder fractions (e.g., 355 / 4 = 88 instead of 88.75). "
+        "The calculation logic applies an explicit widening cast '(double) studentTotal / subjectCount', coercing the numerator to a 64-bit IEEE 754 "
+        "floating-point representation before division occurs. This ensures exact, fractional grade determination and precision class-wide averages."
+    )
+
+    p_walk4 = doc.add_paragraph()
+    r = p_walk4.add_run("4. Short-Circuit Logic for Scholarship Eligibility:\n")
+    r.bold = True
+    r.font.color.rgb = COLOR_PRIMARY_NAVY
+    p_walk4.add_run(
+        "Candidate scholarship qualification requires multi-factor clearance. The program evaluates the composite boolean expression:\n"
+        "   isScholarshipAwarded = ((studentAttendance[i] >= 85 && average >= 85.0) && !hasDisciplinaryWarning[i]);\n"
+        "Java's short-circuit '&&' operator guarantees that if attendance is below 85%, the score comparison is bypassed entirely, reducing "
+        "superfluous computation. The logical NOT operator '!' cleanly enforces zero-tolerance disciplinary standing."
+    )
+
+    p_walk5 = doc.add_paragraph()
+    r = p_walk5.add_run("5. Multi-Loop Iteration Workflows:\n")
+    r.bold = True
+    r.font.color.rgb = COLOR_PRIMARY_NAVY
+    p_walk5.add_run(
+        "The program incorporates four distinct loop variations, each matched to its optimal real-world enterprise scenario:\n"
+        "• Nested for loops: Outer loop iterates through each student; inner loop sums across subject columns.\n"
+        "• while loop: An entry-controlled loop simulating batch generation of student report cards, advancing a report counter until all 4 cards are dispatched.\n"
+        "• do-while loop: An exit-controlled loop simulating automated database cache synchronization. It guarantees at least one execution attempt, polling until sync succeeds or maximum retries are reached.\n"
+        "• Enhanced for-each loop: A clean, index-free loop iterating over the subjects array for auditing curriculum modules."
+    )
+
+    p_walk6 = doc.add_paragraph()
+    r = p_walk6.add_run("6. Career Advisory Routing (Switch Statement) & Tabular Formatted Output:\n")
+    r.bold = True
+    r.font.color.rgb = COLOR_PRIMARY_NAVY
+    p_walk6.add_run(
+        "The program determines the top performer across the cohort and executes an administrative switch statement routing the student "
+        "to specialized development tracks (e.g., Grade A routes to Advanced R&D, Grade B to Industry Certification). Finally, results are "
+        "rendered via System.out.printf() with strict column alignment format specifiers (%-4s, %-15s, %-8.2f) for production-grade readability."
+    )
+
+    add_callout(
+        "Architectural Insight: By enforcing data validation upfront via validateAllMarks() before entering computation loops, "
+        "the application strictly satisfies the Fail-Fast Principle, preventing corrupted state and inconsistent database writes.",
+        label="SOFTWARE DESIGN PRINCIPLE"
+    )
+
+    add_custom_heading("9.2 Complete Source Code (StudentGradeManagerApp.java)", level=2)
     with open("src/StudentGradeManagerApp.java", "r") as f:
         code_cap = f.read()
     add_code_block(code_cap, filename="src/StudentGradeManagerApp.java")
 
-    add_custom_heading("9.2 Verified Terminal Output", level=2)
+    add_custom_heading("9.3 Verified Terminal Output", level=2)
     out_cap = """==========================================================================
        YUVAINTERN ACADEMIC DEVELOPMENT CENTER
        WEEK 1 CAPSTONE: STUDENT ACADEMIC & PLACEMENT MANAGER
