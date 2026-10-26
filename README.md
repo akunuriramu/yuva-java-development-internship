@@ -1,51 +1,59 @@
-# YuvaIntern Engineer – Java Development
-## Week 1: Java Syntax and Basic Operations
+# YuvaIntern Engineer – Java Development Virtual Internship
 
-**Candidate Track:** Java Software Development Virtual Internship  
-**Project Task:** Week 1 Milestone – Java Syntax, Data Types, Control Structures, Arrays, Exception Handling & Integrated Capstone  
+**Repository Owner:** Akunuri Ramu  
 **GitHub Repository:** [https://github.com/akunuriramu/yuva-java-development-internship](https://github.com/akunuriramu/yuva-java-development-internship)  
 **Target Environment:** Java SE 22+ (Verified on `Java 22.0.1 64-Bit HotSpot VM`)  
-**Host OS:** Windows 11 (PowerShell & CMD compatible)  
+**Operating System:** Windows 11 (PowerShell & CMD compatible)  
 
 ---
 
 ## 📌 Project Overview
 
-This repository contains the complete implementation for **Week 1 Task: Java Syntax and Basic Operations** of the **YuvaIntern Virtual Internship**. Designed specifically for software placement preparation, this project bridges core academic computer science theory with production-style, compilable Java source code.
+This repository houses the complete, production-grade technical deliverables for the **YuvaIntern Virtual Internship – Engineer (Java Development)**. Designed to meet both academic rigor and campus placement recruitment standards, every module bridges core computer science theory with compilable, benchmarked Java source code and executive documentation.
 
-Each concept is structured with:
-- A clear definition and memory mechanics explanation (Stack vs Heap).
-- A standalone, compilable Java source program.
-- 100% verified terminal output recorded from actual execution.
-- High-frequency campus placement interview questions and real-world business use cases.
+### Completed Internship Milestones:
+- **Week 1:** Java Syntax, Basic Operations, Control Structures, Arrays & Exception Handling
+- **Week 2:** Object-Oriented Programming (OOP) in Java – 4 Pillars, Memory Dynamics & Autonomous Fleet Capstone
 
 ---
 
-## 📁 Project Directory Structure
+## 📁 Repository Directory Structure
 
 ```text
 YuvaIntern_Java_Development/
 ├── docs/
-│   └── Task1_Java_Syntax_and_Basic_Operations.docx   # Professional Executive Word Report
+│   ├── Task1_Java_Syntax_and_Basic_Operations.docx         # Week 1 Executive Word Report
+│   └── Task2_Object_Oriented_Programming_Java.docx         # Week 2 Executive Word Report
 ├── src/
-│   ├── VariablesAndDataTypesDemo.java               # Topic 1: Primitives, Reference Types & Casting
-│   ├── OperatorsDemo.java                           # Topic 2: Arithmetic, Logical, Unary & Bitwise
-│   ├── ConditionalsDemo.java                        # Topic 3: if, if-else, Ladder & Modern Switch
-│   ├── LoopsDemo.java                               # Topic 4: for, while, do-while & Jump Statements
-│   ├── ArraysDemo.java                              # Topic 5: 1D & 2D Arrays, Stats & Search Algorithms
-│   ├── ExceptionHandlingDemo.java                   # Topic 6: try-catch, finally, throw, throws & Custom Exception
-│   └── StudentGradeManagerApp.java                  # Integrated Capstone Application (All Topics Combined)
-├── bin/                                             # Compiled Bytecode (.class files)
-├── build_report.py                                  # Automated Python generator for Word Documentation
-├── Task1_Java_Syntax_and_Basic_Operations.docx       # Root copy of the Executive Word Report
-└── README.md                                        # Project Documentation & Terminal Run Guide
+│   ├── VariablesAndDataTypesDemo.java                     # Week 1: Primitives, Reference Types & Casting
+│   ├── OperatorsDemo.java                                 # Week 1: Arithmetic, Logical, Unary & Bitwise
+│   ├── ConditionalsDemo.java                              # Week 1: if, if-else, Ladder & Modern Switch
+│   ├── LoopsDemo.java                                     # Week 1: for, while, do-while & Jump Statements
+│   ├── ArraysDemo.java                                    # Week 1: 1D & 2D Arrays, Stats & Search Algorithms
+│   ├── ExceptionHandlingDemo.java                         # Week 1: try-catch, finally, throw, throws & Custom Exception
+│   ├── StudentGradeManagerApp.java                        # Week 1 Capstone: Student Performance System
+│   └── week2/                                             # WEEK 2: OBJECT-ORIENTED PROGRAMMING
+│       ├── ClassesAndObjectsDemo.java                     # Topic 1: Blueprints, Heap Objects & Memory Lifecycle
+│       ├── EncapsulationDemo.java                         # Topic 2: Data Hiding, Validation & Immutability
+│       ├── InheritanceDemo.java                           # Topic 3: IS-A, Chaining & Diamond Problem
+│       ├── PolymorphismDemo.java                          # Topic 4: Dynamic Dispatch & Covariant Returns
+│       ├── AbstractionDemo.java                           # Topic 5: Abstract Classes, Templates & Interfaces
+│       ├── ImportanceOfOOPDemo.java                       # Topic 6: Procedural vs. OOP Architecture Comparison
+│       └── EnterpriseFleetManagementApp.java              # Week 2 Capstone: Autonomous & Electric Fleet System
+├── bin/                                                   # Compiled Bytecode (.class files, gitignored)
+├── build_report.py                                        # Week 1 Python docx Report Generator
+├── build_week2_report.py                                  # Week 2 Python docx Report Generator
+├── Task1_Java_Syntax_and_Basic_Operations.docx             # Root copy of Week 1 Report
+├── Task2_Object_Oriented_Programming_Java.docx             # Root copy of Week 2 Report
+├── .gitignore                                             # Excludes compiled binaries and IDE cache
+└── README.md                                              # Master Technical Documentation & Execution Guide
 ```
 
 ---
 
 ## 🛠️ Prerequisites & Verification
 
-Check that Java is installed and available in your system `PATH`:
+Ensure that the Java Development Kit (JDK 22+) is configured on your system `PATH`:
 
 ```powershell
 java -version
@@ -62,116 +70,132 @@ javac 22.0.1
 
 ---
 
-## 🚀 How to Compile and Run the Java Programs
+# 🚀 WEEK 2: OBJECT-ORIENTED PROGRAMMING IN JAVA
 
-Open PowerShell or Command Prompt inside the `YuvaIntern_Java_Development` directory.
-
-### Step 1: Compile All Java Files into `bin/` Directory
+### Step 1: Compile All Week 2 Modules
 
 ```powershell
-# Create the bin output folder if it doesn't already exist
+# Create bin directory if needed
 mkdir bin -Force
 
-# Compile all source files in the src/ folder
+# Compile all Week 2 source files
+javac -d bin src/week2/*.java
+```
+
+*(Compiles 7 source files with zero errors and zero warnings).*
+
+---
+
+### Step 2: Run Individual Week 2 Demonstrations
+
+#### 1. Classes, Objects, Constructors & Memory Dynamics
+Demonstrates class blueprints vs. heap object allocation, constructor chaining with `this(...)`, the copy constructor pattern, and garbage collection root reachability (nullification, reassignment, island of isolation).
+```powershell
+java -cp bin week2.ClassesAndObjectsDemo
+```
+
+#### 2. Encapsulation, Data Integrity & Immutability
+Demonstrates private fields, accessor/mutator validation filters, and production-grade immutable class design with defensive copying of mutable objects (`Date`, `List`).
+```powershell
+java -cp bin week2.EncapsulationDemo
+```
+
+#### 3. Inheritance, Constructor Chaining & The Diamond Problem
+Demonstrates single, multilevel, and hierarchical inheritance, parent-to-child constructor chaining execution order, `super()` / `super.method()`, and why Java forbids multiple class inheritance.
+```powershell
+java -cp bin week2.InheritanceDemo
+```
+
+#### 4. Polymorphism, Dynamic Dispatch & Covariant Returns
+Demonstrates compile-time method overloading with automatic type promotion, runtime method overriding via Dynamic Method Dispatch (`vtable` resolution), covariant return types, and static method hiding traps.
+```powershell
+java -cp bin week2.PolymorphismDemo
+```
+
+#### 5. Abstraction, Template Method Pattern & Interfaces
+Demonstrates abstract classes with state retention, the Template Method design pattern, and interfaces with `default`, `static`, and `private` methods alongside an enterprise architectural decision matrix.
+```powershell
+java -cp bin week2.AbstractionDemo
+```
+
+#### 6. Importance of OOP: Procedural Spaghetti vs. Modular OOP
+Presents a side-by-side architectural contrast evaluating maintainability, extensibility (Open/Closed Principle), code reuse, and unit testability between procedural parallel arrays and modular OOP classes.
+```powershell
+java -cp bin week2.ImportanceOfOOPDemo
+```
+
+---
+
+### Step 3: Run the Week 2 Capstone Application
+
+```powershell
+java -cp bin week2.EnterpriseFleetManagementApp
+```
+
+**Scenario:** Multi-Tier Electric & Autonomous Logistics Fleet System
+- **Encapsulation:** Abstract `Vehicle` with private fields (`vehicleId`, `vin`, `model`, `currentBatteryLevel`), immutable 17-character VIN, and battery validation guards.
+- **Abstraction:** `AutonomousNavigable` (LiDAR, GPS routing) and `Rechargeable` (grid DC fast charging) capability interfaces.
+- **Inheritance:** `ElectricTruck`, `DeliveryVan`, and `AutonomousDrone` specializing payload dynamics and consumption curves.
+- **Polymorphism:** Uniform `List<Vehicle>` executing Dynamic Method Dispatch across overridden range calculations, mission dispatch, and maintenance projections.
+- **Placement Edge Cases:** Java 16+ Pattern Matching for `instanceof`, `final` audit logging, and Deep vs. Shallow object cloning with nested `Waypoint` instances.
+
+---
+
+## 📊 Week 2 Concept & Placement Summary
+
+| Topic | Java Source File | Core Architectural Concept | Practical Industry Use Case |
+|---|---|---|---|
+| **Classes & Objects** | `ClassesAndObjectsDemo.java` | Stack reference vs. Heap instance, copy constructor, GC reachability & Island of Isolation | Cloud Virtual Machine Provisioning |
+| **Encapsulation** | `EncapsulationDemo.java` | Private data hiding, validation filters, immutable class rules & defensive copies | Banking KYC & Immutable Audit Records |
+| **Inheritance** | `InheritanceDemo.java` | Single/multilevel/hierarchical inheritance, constructor chaining order, Diamond Problem | Enterprise Engineering Staff Hierarchy |
+| **Polymorphism** | `PolymorphismDemo.java` | Overloading type promotion, Dynamic Dispatch via vtables, Covariant Returns, Static method hiding | Multi-Channel Payment Processing Gateway |
+| **Abstraction** | `AbstractionDemo.java` | Abstract classes, Template Method Pattern, Java 8/9 default & private interface methods | Cloud Object Storage & Security Provider |
+| **Importance of OOP** | `ImportanceOfOOPDemo.java` | Procedural parallel arrays vs. OOP domain entities (Maintainability, Extensibility, Testability) | Banking Loan Underwriting & Risk Engine |
+| **Integrated Capstone** | `EnterpriseFleetManagementApp.java` | Full synthesis of the 4 pillars, Java 16 pattern matching, deep cloning, and tabular telemetry | Autonomous & Electric Logistics Fleet System |
+
+---
+
+# 🚀 WEEK 1: JAVA SYNTAX & BASIC OPERATIONS
+
+### Compile and Run Week 1 Modules
+
+```powershell
+# Compile Week 1 source files
 javac -d bin src/*.java
-```
 
-*(This compiles all 7 source files with zero errors and zero warnings).*
-
----
-
-### Step 2: Run Individual Topic Demonstrations
-
-#### 1. Topic 1: Variables and Data Types
-Demonstrates the 8 primitive data types, memory sizes, String reference immutability, widening/narrowing casting, and byte overflow.
-```powershell
+# Run individual demonstrations
 java -cp bin VariablesAndDataTypesDemo
-```
-
-#### 2. Topic 2: Operators in Java
-Demonstrates arithmetic operations, relational checks, short-circuit logical evaluation (`&&`, `||`), unary pre/post-increment subtleties, ternary expressions, bitwise manipulations, and e-commerce cart calculation.
-```powershell
 java -cp bin OperatorsDemo
-```
-
-#### 3. Topic 3: Conditional Statements
-Demonstrates simple `if`, `if-else`, `if-else-if` ladder, nested `if`, classic `switch` with fallthrough grouping, modern Java arrow switch expressions, and a credit-scoring loan approval engine.
-```powershell
 java -cp bin ConditionalsDemo
-```
-
-#### 4. Topic 4: Loops and Iterations
-Demonstrates counter-controlled `for` loops, entry-controlled `while` loops, exit-controlled `do-while` loops (guaranteed 1 run), enhanced `for-each` loops, `break`/`continue` jump statements, and an automated low-stock inventory monitor.
-```powershell
 java -cp bin LoopsDemo
-```
-
-#### 5. Topic 5: Arrays in Java
-Demonstrates 1D array creation, linear traversal, calculation of sum, average, min, and max, $O(N)$ linear search, 2D matrix manipulation, and subject-wise classroom averages.
-```powershell
 java -cp bin ArraysDemo
-```
-
-#### 6. Topic 6: Error Handling and Exceptions
-Demonstrates the `Throwable` hierarchy, handling `ArithmeticException` (division by zero) and `ArrayIndexOutOfBoundsException`, multiple catch ordering rules, `finally` cleanup block guarantees, `throw` vs `throws`, and a custom `InsufficientBalanceException` in an ATM withdrawal engine.
-```powershell
 java -cp bin ExceptionHandlingDemo
-```
 
----
-
-### Step 3: Run the Integrated Capstone Demonstration
-
-The capstone application brings all Week 1 concepts into an integrated, production-style student grade management and scholarship eligibility engine:
-
-```powershell
+# Run Week 1 Capstone
 java -cp bin StudentGradeManagerApp
 ```
 
-**Key Systems Combined in the Capstone:**
-1. **Variables & Types:** Primitive counters, double GPAs, character grades, and String arrays.
-2. **Operators:** Arithmetic totals, relational checks, and ternary pass/fail evaluation.
-3. **Conditionals:** Letter grade classification ladder and modern switch routing.
-4. **Loops:** Iterating students and subjects via nested for, while, and do-while loops.
-5. **Arrays:** Parallel 1D metadata arrays and a 2D matrix of subject marks.
-6. **Exception Handling:** Custom `InvalidMarkException` auditing all mark inputs before calculations run.
-
 ---
 
-## 📊 Summary of Concepts & Placement Insights
+## 📄 Formal Documentation Reports
 
-| Topic | Java Source File | Core Placement Concept | Practical Placement Use Case |
-|---|---|---|---|
-| **Variables & Types** | `VariablesAndDataTypesDemo.java` | Stack vs Heap, Implicit vs Explicit casting, Byte overflow wrap-around (`(byte)130 -> -126`) | Employee Payroll & Tax Calculator |
-| **Operators** | `OperatorsDemo.java` | Short-circuit evaluation (`&&`, `\|\|`), Pre vs Post increment (`(a++) + (++b) + (++a)`), Bitwise shifts | E-Commerce Cart & Discount Engine |
-| **Conditionals** | `ConditionalsDemo.java` | `if-else-if` hierarchy, switch fallthrough mechanics, enhanced switch expressions | Bank Loan Eligibility & Credit Risk Engine |
-| **Loops** | `LoopsDemo.java` | Entry vs Exit controlled loops, do-while single execution guarantee, break vs continue | Inventory Low-Stock Monitor & Alert Engine |
-| **Arrays** | `ArraysDemo.java` | Contiguous memory allocation, $O(1)$ indexed access, 2D matrix traversal, Linear search | Multi-Subject Class Grade Matrix & Topper Tracker |
-| **Exception Handling** | `ExceptionHandlingDemo.java` | Checked vs Unchecked exceptions, Catch block hierarchy order, Finally block guarantee, Custom Exceptions | Bank ATM Cash Withdrawal & Validation System |
-| **Integrated Capstone** | `StudentGradeManagerApp.java` | Synthesis of all 6 core syntax modules into a cohesive production console application | Student Academic & Placement Performance Manager |
+Two Word documents are available in the repository:
+1. **Week 1 Report:** [docs/Task1_Java_Syntax_and_Basic_Operations.docx](docs/Task1_Java_Syntax_and_Basic_Operations.docx) (or root mirror: `Task1_Java_Syntax_and_Basic_Operations.docx`).
+2. **Week 2 Report:** [docs/Task2_Object_Oriented_Programming_Java.docx](docs/Task2_Object_Oriented_Programming_Java.docx) (or root mirror: `Task2_Object_Oriented_Programming_Java.docx`).
 
----
-
-## 📄 Formal Documentation Report
-
-A Word report named **`Task1_Java_Syntax_and_Basic_Operations.docx`** has been compiled and placed inside the `docs/` folder (and in the project root). It contains:
-- **Title Page & Executive Metadata:** Formally aligned with YuvaIntern criteria.
-- **Project Objectives & Scope:** Academic and placement motivations.
-- **Java Syntax & Architectural Foundations:** JDK vs JRE vs JVM comparison and bytecode execution pipeline.
-- **All 6 Topic Analyses:** Definitions, memory models, detailed code snippets, verified verbatim terminal outputs, and business use cases.
-- **Integrated Capstone Documentation:** Complete architectural walkthrough and verified output.
-- **Verification & Test Matrix:** 100% genuine compilation and execution records (Exit Code: 0).
-- **Placement Readiness Cheatsheet:** Top 8 high-frequency Java syntax interview traps asked by tier-1 tech recruiters.
-- **Conclusion & Citations:** Formal references including the Oracle Java SE 22 Language Specification.
-
-To regenerate the documentation report at any time:
+### To Regenerate Documentation Reports via Python:
 ```powershell
+# Regenerate Week 1 Report
 python build_report.py
+
+# Regenerate Week 2 Report
+python build_week2_report.py
 ```
 
 ---
 
-## 👨‍💻 Author Information
-- **Internship Program:** YuvaIntern Virtual Internship – Engineer (Java Development)
-- **Milestone:** Week 1 Task – Java Syntax and Basic Operations
-- **Verification Status:** Verified Locally (7 of 7 Programs Compiled and Tested Successfully)
+## 👨‍💻 Author & Internship Information
+- **Intern:** Akunuri Ramu
+- **Track:** Java Software Development Virtual Internship
+- **Organization:** YuvaIntern
+- **Verification Status:** 100% Tested Locally on Oracle JDK 22 (All 14 Programs Passed with Exit Code 0)
